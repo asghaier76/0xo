@@ -1,14 +1,79 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+    <div text-center padding>
+        
+        <!-- <img  src="assets/xwalletlogo.png" alt=""> -->
+        <h1  style="color: #3880ff">xWallet Your Gateway to Ethereum World</h1>
+        <h4  style="color: #3880ff">Powered by Torus & 0x</h4>
+
+    </div>
+
+    <ion-card class="frontheader animated bounceInUp">
+        <ion-item>
+            <ion-thumbnail item-start class="animated tada">
+                <img src="./assets/icon/favicon.png" alt="">
+            </ion-thumbnail>
+            <ion-label>{{address}}</ion-label>
+              <ion-chip slot="end" >
+                  <ion-label style="margin-right: 8px;">{{balance | number:'1.3-3'}} ETH</ion-label> 
+                  <br>
+                  <ion-avatar class="image-center">
+                      <img src="./assets/icon/favicon.png">
+                  </ion-avatar> 
+              </ion-chip>
+        </ion-item>
+
+    </ion-card>
+
+    <ion-card padding>
+        <br>      
+        <ion-item>
+          <span item-start>
+            <ion-icon color="primary" name="person"></ion-icon>
+            </span>
+            <ion-input type="text" placeholder="RECIPIENT ADDRESS" [(ngModel)]="emailRx"></ion-input>
+            <button clear item-right (click)="resolveEmail()"><ion-icon color="primary" name="search"></ion-icon></button>
+        </ion-item>
+        <ion-item>
+              <span item-start>
+                  
+              </span>
+              <ion-input type="number" placeholder="AMOUNT" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+          
+          <div padding text-center>
+            <ion-button class="nxtstpbtn" color="primary" shape="round" expand="block" (click)="sendETH()"><ion-icon name="send"></ion-icon>SEND</ion-button>
+          </div>    
+    </ion-card>
+
+    <ion-grid class="catgrid animated zoomIn">
+
+        <ion-row class="cat-rows">
+            <ion-col col-6 class="cat-box" >
+              <div padding text-center>
+                  <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="launch0x()">Tokens</ion-button>
+              </div> 
+            </ion-col>
+            <ion-col col-6 class="cat-box">
+              <div padding text-center>
+                <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="showWallet()">Wallet</ion-button>
+              </div> 
+            </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+
+
+
+  
+
 </ion-content>

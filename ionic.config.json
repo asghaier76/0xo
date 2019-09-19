@@ -1,5 +1,7 @@
 {
   "name": "torustest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
