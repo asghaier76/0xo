@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="info.proksimity.0xo" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>0xO</name>
+    <description>0xO is an Ethereum and ERC20 tokens wallet.</description>
+    <author email="asghaier76@gmail.com" href="http://ox0.com/">Ahmad Sghaier Omar</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

@@ -11,24 +11,23 @@
 
     <div text-center padding>
         
-        <!-- <img  src="assets/xwalletlogo.png" alt=""> -->
-        <h1  style="color: #3880ff">xWallet Your Gateway to Ethereum World</h1>
+        <h1  style="color: #3880ff">0xO Your Gateway to Ethereum World</h1>
         <h4  style="color: #3880ff">Powered by Torus & 0x</h4>
 
     </div>
 
     <ion-card class="frontheader animated bounceInUp">
         <ion-item>
-            <ion-thumbnail item-start class="animated tada">
-                <img src="./assets/icon/favicon.png" alt="">
-            </ion-thumbnail>
+              <ion-icon color="primary" name="wallet"></ion-icon>
+
+
             <ion-label>{{address}}</ion-label>
               <ion-chip slot="end" >
                   <ion-label style="margin-right: 8px;">{{balance | number:'1.3-3'}} ETH</ion-label> 
                   <br>
-                  <ion-avatar class="image-center">
+                  <!-- <ion-avatar class="image-center">
                       <img src="./assets/icon/favicon.png">
-                  </ion-avatar> 
+                  </ion-avatar>  -->
               </ion-chip>
         </ion-item>
 
@@ -38,9 +37,9 @@
         <br>      
         <ion-item>
           <span item-start>
-            <ion-icon color="primary" name="person"></ion-icon>
+            <ion-icon color="primary" name="at"></ion-icon>
             </span>
-            <ion-input type="text" placeholder="RECIPIENT ADDRESS" [(ngModel)]="emailRx"></ion-input>
+            <ion-input type="text" placeholder="RECIPIENT EMAIL ADDRESS" [(ngModel)]="emailRx"></ion-input>
             <button clear item-right (click)="resolveEmail()"><ion-icon color="primary" name="search"></ion-icon></button>
         </ion-item>
         <ion-item>
@@ -51,7 +50,7 @@
         </ion-item>
           
           <div padding text-center>
-            <ion-button class="nxtstpbtn" color="primary" shape="round" expand="block" (click)="sendETH()"><ion-icon name="send"></ion-icon>SEND</ion-button>
+            <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="sendETH()"><ion-icon name="send"></ion-icon>SEND</ion-button>
           </div>    
     </ion-card>
 

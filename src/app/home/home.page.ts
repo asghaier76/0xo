@@ -116,7 +116,7 @@ export class HomePage {
       {
           orderSource: 'https://api.radarrelay.com/0x/v2/',//'https://api.relayer.com/sra/v2/',
           provider: provider,
-          walletDisplayName: 'xWallet',
+          walletDisplayName: '0xO',
           affiliateInfo: {
                   feeRecipient: '0x57328ec619d9d6c2b0428472d1cebaf3cf6b8f5d',
                   feePercentage: 0.025
