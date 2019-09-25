@@ -11,7 +11,7 @@
 
     <div text-center padding>
         
-        <h1  style="color: #3880ff">0xO Your Gateway to Ethereum World</h1>
+        <h1  style="color: #3880ff">0xO Access Crypto in a wink ;)</h1>
         <h4  style="color: #3880ff">Powered by Torus & 0x</h4>
 
     </div>
@@ -43,10 +43,15 @@
             <button clear item-right (click)="resolveEmail()"><ion-icon color="primary" name="search"></ion-icon></button>
         </ion-item>
         <ion-item>
+          <span item-start>
+            </span>
+            <ion-input type="text" placeholder="ETHEREUM ADDRESS" [(ngModel)]="addressRx"></ion-input>
+        </ion-item>
+        <ion-item>
               <span item-start>
                   
               </span>
-              <ion-input type="number" placeholder="AMOUNT" [(ngModel)]="amount"></ion-input>
+              <ion-input type="number" placeholder="AMOUNT IN ETH" [(ngModel)]="amount"></ion-input>
         </ion-item>
           
           <div padding text-center>
@@ -72,7 +77,11 @@
       </ion-grid>
 
 
-
+      <ion-fab class="show-xs-up hide-md-up" slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button (click)="signout()">
+          <ion-icon name="log-out"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
   
 
 </ion-content>

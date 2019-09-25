@@ -9,7 +9,11 @@
   },
   "permissions": [
     "*://*.tor.us/*",
-    "*://*.google.com/*"
+    "*://*.google.com/*",
+    "*://*.radarrelay.com/*",
+    "*://*.relayer.com/*",
+    "*://heapanalytics.com/*"
   ],
     "manifest_version": 2
   }
+

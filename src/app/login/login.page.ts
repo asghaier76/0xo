@@ -27,10 +27,9 @@ export class LoginPage implements OnInit {
     await this.loader.present();
 
     try {
-      this.torus = new Torus();
-      // const t = new Torus(); 
+      this.torus = new Torus({buttonPosition: 'bottom-left'});
       this.initTorus();
-      await this.torus.init(); 
+      await this.torus.init({network: {host: 'mainnet'}}); // other network options --- kovan, rospten, rinkeby
       this.torus.login()
       .then(res => {
         console.log("res login" +res);

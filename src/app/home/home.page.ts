@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import Web3 from 'web3';
-declare var zeroExInstant;
+declare var zeroExInstant: any;
+import Torus from "@toruslabs/torus-embed";
 // import Torus from "@toruslabs/torus-embed";
-import { AssetLedger, AssetLedgerCapability } from '@0xcert/ethereum-asset-ledger';
 import { WalletService } from '../wallet.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class HomePage {
   addressTx : any;
   amount: any;
   web3: any = {};
-  constructor(private wallet: WalletService) {
+  constructor(private wallet: WalletService, private navCtrl: NavController) {
     this.torus = this.wallet.torus;
     this.address = this.wallet.account;
     this.web3 = new Web3(this.torus.provider);
@@ -30,7 +31,8 @@ export class HomePage {
   ngOnInit() {
     this.web3.eth.getAccounts().then(accounts => {
       this.web3.eth.getBalance(accounts[0]).then( res => {
-        this.balance = res;
+        console.log('bal ' + res)
+        this.balance = res/10**18;
         this.addressTx = accounts[0];
         console.log("acc: "+this.wallet.account+", bal: "+ this.balance)
       });
@@ -50,7 +52,7 @@ export class HomePage {
   async resolveEmail() {
     console.log("email")
     if(this.emailRx){
-      this. addressRx =  await this.torus.getPublicAddress(this.emailRx);
+      this.addressRx =  await this.torus.getPublicAddress(this.emailRx);
       console.log(this.addressRx)
     }
   }
@@ -69,6 +71,8 @@ export class HomePage {
             console.log(transactionHash);
         }
       });
+    else  
+      alert('Please specify an Ethereum address and the amount first.');
   }
 
   // async toruslogin() {
@@ -121,9 +125,16 @@ export class HomePage {
                   feeRecipient: '0x57328ec619d9d6c2b0428472d1cebaf3cf6b8f5d',
                   feePercentage: 0.025
                 },
+          networkId: 1,
+          // shouldDisableAnalyticsTracking: true,
       },
       'body',
     );
+  }
+
+  async signout() {
+    await this.torus.logout();
+    this.navCtrl.navigateRoot('/login');
   }
 
 }
