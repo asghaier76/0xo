@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import Web3 from 'web3';
 declare var zeroExInstant: any;
 import Torus from "@toruslabs/torus-embed";
@@ -21,7 +21,7 @@ export class HomePage {
   addressTx : any;
   amount: any;
   web3: any = {};
-  constructor(private wallet: WalletService, private navCtrl: NavController) {
+  constructor(private wallet: WalletService, private navCtrl: NavController,private modalCtrl: ModalController) {
     this.torus = this.wallet.torus;
     this.address = this.wallet.account;
     this.web3 = new Web3(this.torus.provider);
@@ -113,12 +113,23 @@ export class HomePage {
     
   }
 
+  // async launch0x() {
+
+    
+  //   const modal = await this.modalCtrl.create({
+  //     component: ZeroxPage
+  //   });
+    
+  //   await modal.present();
+
+  // }
+
   launch0x() {
     let provider = this.zeroXprovider;
     // create ledger instance
     zeroExInstant.render(
       {
-          orderSource: 'https://api.radarrelay.com/0x/v2/',//'https://api.relayer.com/sra/v2/',
+        orderSource: 'https://sra.bamboorelay.com/0x/v2/', //'https://api.radarrelay.com/0x/v2/',
           provider: provider,
           walletDisplayName: '0xO',
           affiliateInfo: {

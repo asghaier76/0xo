@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
         this.wallet.setAccount(res);
         this.wallet.setTorus(this.torus);
         this.navCtrl.navigateRoot('/home');
-        console.log(this.torus);
+        // console.log(this.torus);
         this.loader.dismiss();
       })
       
