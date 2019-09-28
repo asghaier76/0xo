@@ -32,17 +32,12 @@ export class LoginPage implements OnInit {
       await this.torus.init({network: {host: 'mainnet'}}); // other network options --- kovan, rospten, rinkeby
       this.torus.login()
       .then(res => {
-        console.log("res login" +res);
         this.wallet.setAccount(res);
         this.wallet.setTorus(this.torus);
         this.navCtrl.navigateRoot('/home');
-        // console.log(this.torus);
         this.loader.dismiss();
       })
       
-      // await this.torus.login(); // await torus.ethereum.enable()
-      
-      // window.torus = torus
     } catch (error) {
       console.error(error);
       this.loader.dismiss();

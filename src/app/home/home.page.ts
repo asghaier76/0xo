@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import Web3 from 'web3';
 declare var zeroExInstant: any;
-import Torus from "@toruslabs/torus-embed";
-// import Torus from "@toruslabs/torus-embed";
 import { WalletService } from '../wallet.service';
 
 @Component({
@@ -75,37 +73,8 @@ export class HomePage {
       alert('Please specify an Ethereum address and the amount first.');
   }
 
-  // async toruslogin() {
-  //   try {
-  //     this.torus = new Torus();
-  //     const t = new Torus();
-  //     await this.torus.init(); 
-      
-  //     this.torus.login()
-  //     .then(res => {
-  //       console.log(res);
-        
-  //       const web3 = new Web3(this.torus.provider);
-  //       this.zeroXprovider = web3.currentProvider;
-  //       // arbitrary data
-  //       // web3.eth.getAccounts().then(accounts => {
-  //       //   let publicAddress = accounts[0]
-  //       //   web3.eth.getBalance(accounts[0]).then(console.log)
-  //       // });
-  //     })
-      
-  //     // await this.torus.login(); // await torus.ethereum.enable()
-      
-  //     // window.torus = torus
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
   async showButton() {
-    // console.log(await this.torus.getPublicAddress("asghaier76@gmail.com"));
     this.getUserInfo();
-    // this.torus.showTorusButton();
   }
 
   showWallet() {
@@ -113,16 +82,6 @@ export class HomePage {
     
   }
 
-  // async launch0x() {
-
-    
-  //   const modal = await this.modalCtrl.create({
-  //     component: ZeroxPage
-  //   });
-    
-  //   await modal.present();
-
-  // }
 
   launch0x() {
     let provider = this.zeroXprovider;
