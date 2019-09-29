@@ -9,12 +9,9 @@
 
 <ion-content>
 
-    <div text-center padding>
-        
-        <h1  style="color: #3880ff">0xO Access Crypto in a wink ;)</h1>
-        <h4  style="color: #3880ff">Powered by Torus & 0x</h4>
-
-    </div>
+  <div text-center padding> 
+    <h1  style="color: #3880ff">0xO Access Crypto in a wink ;)</h1>
+  </div>
 
     <ion-card class="frontheader animated bounceInUp">
         <ion-item>
@@ -53,7 +50,6 @@
               </span>
               <ion-input type="number" placeholder="AMOUNT IN ETH" [(ngModel)]="amount"></ion-input>
         </ion-item>
-          
           <div padding text-center>
             <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="sendETH()"><ion-icon name="send"></ion-icon>SEND</ion-button>
           </div>    
@@ -62,17 +58,26 @@
     <ion-grid class="catgrid animated zoomIn">
 
         <ion-row class="cat-rows">
-            <ion-col col-6 class="cat-box" >
+            <ion-col col-4 class="cat-box" >
               <div padding text-center>
                   <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="launch0x()">Tokens</ion-button>
               </div> 
             </ion-col>
-            <ion-col col-6 class="cat-box">
+            <ion-col col-4 class="cat-box" >
+              <div padding text-center>
+                  <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="invite()">Invite Others</ion-button>
+              </div> 
+            </ion-col>
+            <ion-col col-4 class="cat-box">
               <div padding text-center>
                 <ion-button class="nxtstpbtn" color="primary" shape="round" (click)="showWallet()">Wallet</ion-button>
               </div> 
             </ion-col>
         </ion-row>
+
+      <div text-center padding>
+          <h4  style="color: #3880ff">Powered by Torus & 0x</h4>
+      </div>
       
       </ion-grid>
 
